@@ -1,0 +1,25 @@
+# Configuración
+wp-config.php
+
+# Uploads
+/wp-content/uploads/
+
+# Cache
+/wp-content/cache/
+/wp-content/upgrade/
+
+# Logs
+*.log
+debug.log
+
+# Dependencias
+node_modules/
+vendor/
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
