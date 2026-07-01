@@ -376,41 +376,148 @@
 
 }
 
+
 .about-page {
     background: #fff;
-    color: #111;
+    padding: 80px 0;
 }
 
 .about-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
 .about-hero {
-    padding: 100px 0 60px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 70px;
+}
+
+.about-logo {
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 25px;
 }
 
 .about-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    color: #222;
+    margin-bottom: 16px;
 }
 
-.about-subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    max-width: 600px;
+.about-intro {
+    max-width: 700px;
     margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #666;
 }
 
-.about-content {
-    padding: 60px 0;
-    line-height: 1.7;
-    font-size: 1.05rem;
-    color: #333;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-bottom: 70px;
+}
+
+.about-card {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+    transition: .3s;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+}
+
+.about-card h2 {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    color: #222;
+}
+
+.about-card p {
+    line-height: 1.9;
+    color: #666;
+    margin: 0;
+}
+
+.contact-section {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #222;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    background: #f8f8f8;
+    border-radius: 14px;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.contact-card p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+@media(max-width:768px) {
+
+    .about-page {
+        padding: 60px 0;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .contact-section {
+        padding: 30px;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-card h2,
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+    }
+
 }
 
 .pipa-grid {
