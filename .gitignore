@@ -14,7 +14,7 @@ debug.log
 
 # Dependencias
 node_modules/
-vendor/
+wp-content/plugins/*/vendor/
 
 # IDE
 .vscode/
