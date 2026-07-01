@@ -13,11 +13,8 @@ $custom_logo_id = get_theme_mod('custom_logo');
 ?>
 
 <main class="about-page">
-
 	<section class="about-hero">
-
 		<div class="about-container">
-
 			<?php
 			if ($custom_logo_id) {
 				echo wp_get_attachment_image($custom_logo_id, 'full', false, [
