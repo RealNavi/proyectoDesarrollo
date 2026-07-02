@@ -3,7 +3,7 @@
  * Plugin Name: Chatbot GPT
  * Description: Chatbot interactivo conectado a la API de OpenAI. Usa el shortcode [chatbot_gpt] en cualquier página.
  * Version:     1.0.0
- * Author:      Jhon Jairo Solano Carranza
+ * Author:      By Pipa
  * Text Domain: chatbot-gpt
  */
 
