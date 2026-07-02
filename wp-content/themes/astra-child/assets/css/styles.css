@@ -604,6 +604,31 @@
 
 .pipa-grid--productos .pipa-card-image-wrap { background: #F2E1CD; }
 
+.pipa-grid--blog {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.pipa-card--text-only .pipa-card-body {
+    padding: 24px;
+}
+
+.pipa-card--text-only .pipa-card-meta {
+    margin-top: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pipa-card-link {
+    text-decoration: none;
+    color: #C47327;
+    font-weight: 600;
+}
+
+.pipa-card-link:hover {
+    text-decoration: underline;
+}
+
 .pipa-grid--recetas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: center;
@@ -677,6 +702,10 @@
     .pipa-grid--productos {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .pipa-grid--blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media(max-width:700px) {
@@ -692,6 +721,10 @@
 
     .pipa-grid--productos {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pipa-grid--blog {
+        grid-template-columns: 1fr;
     }
 }
 

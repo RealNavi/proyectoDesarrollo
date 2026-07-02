@@ -147,3 +147,38 @@ function pipa_preguntas_lista() {
     return $output;
 }
 add_shortcode('preguntas_lista', 'pipa_preguntas_lista');
+
+function pipa_blog_grid() {
+    $query = new WP_Query([ 'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => -1 ]);
+    $output = '';
+
+    if ( $query->have_posts() ) {
+        $output .= '<div class="pipa-grid pipa-grid--blog">';
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            $descripcion = get_the_excerpt();
+
+            ob_start();
+            ?>
+            <div class="pipa-card pipa-card--text-only">
+                <div class="pipa-card-body">
+                    <h3 class="pipa-card-title"><?php the_title(); ?></h3>
+                    <?php if ( $descripcion ) : ?>
+                        <p class="pipa-card-desc"><?php echo esc_html( $descripcion ); ?></p>
+                    <?php endif; ?>
+                    <div class="pipa-card-meta">
+                        <span><?php echo esc_html( get_the_date() ); ?></span>
+                        <a class="pipa-card-link" href="<?php the_permalink(); ?>">Leer más &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $output .= ob_get_clean();
+        }
+        $output .= '</div>';
+    }
+    wp_reset_postdata();
+
+    return $output;
+}
+add_shortcode('blog_grid', 'pipa_blog_grid');

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pipa/testimonios-carousel",
+	"title": "Carrusel de Testimonios",
+	"category": "widgets",
+	"icon": "format-quote",
+	"description": "Muestra un carrusel con los testimonios de clientes (CPT Testimonio).",
+	"attributes": {
+		"titulo": {
+			"type": "string",
+			"default": "Lo que dicen nuestros clientes"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "pipa-testimonios",
+	"editorScript": "pipa-testimonios-editor",
+	"style": "pipa-testimonios-style",
+	"script": "pipa-testimonios-carousel",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,263 @@
+/* Chatbot GPT — colores alineados a la marca Pipa (terracota/crema) */
+
+.cb-wrapper {
+    max-width: 480px;
+    border: 1.5px solid #F2E1CD;
+    border-radius: 14px;
+    overflow: hidden;
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+/* ── Header ── */
+.cb-header {
+    background: #8A4B14;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cb-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+    animation: cb-pulse 2s infinite;
+}
+
+.cb-float-close {
+    display: none;
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.cb-float-panel .cb-float-close {
+    display: inline-flex;
+}
+
+/* ── Área de mensajes ── */
+.cb-messages {
+    height: 340px;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #F9F0E7;
+}
+
+.cb-messages::-webkit-scrollbar {
+    width: 4px;
+}
+.cb-messages::-webkit-scrollbar-thumb {
+    background: #E5C7A4;
+    border-radius: 4px;
+}
+
+/* ── Burbujas ── */
+.cb-bubble {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    line-height: 1.5;
+    word-break: break-word;
+    font-size: 14px;
+}
+
+/* Bot — izquierda */
+.cb-bubble--bot {
+    background: #fff;
+    border: 1.5px solid #F2E1CD;
+    color: #3b2a1e;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+/* Usuario — derecha, terracota */
+.cb-bubble--user {
+    background: #C47327;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* ── Indicador de escritura (3 puntos) ── */
+.cb-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1.5px solid #F2E1CD;
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.cb-typing span {
+    width: 7px;
+    height: 7px;
+    background: #C47327;
+    border-radius: 50%;
+    display: inline-block;
+    animation: cb-bounce 1.2s infinite ease-in-out;
+}
+
+.cb-typing span:nth-child(2) { animation-delay: 0.2s; }
+.cb-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── Área de input ── */
+.cb-input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1.5px solid #F2E1CD;
+    background: #fff;
+}
+
+.cb-input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1.5px solid #E5C7A4;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow-y: auto;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cb-input:focus {
+    border-color: #C47327;
+    box-shadow: 0 0 0 3px rgba(196, 115, 39, 0.14);
+}
+
+.cb-send-btn {
+    padding: 0 16px;
+    align-self: stretch;
+    background: #C47327;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.cb-send-btn:hover {
+    background: #8A4B14;
+}
+
+.cb-send-btn:disabled {
+    background: #cbb197;
+    cursor: not-allowed;
+}
+
+/* ── Contador de caracteres ── */
+.cb-counter {
+    text-align: right;
+    font-size: 11px;
+    color: #a98b6c;
+    padding: 0 14px 8px;
+    background: #fff;
+}
+
+.cb-counter.cb-counter--warn {
+    color: #ef4444;
+}
+
+/* ── Animaciones ── */
+@keyframes cb-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30%            { transform: translateY(-6px); }
+}
+
+@keyframes cb-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* ── Widget flotante (burbuja + panel) ── */
+.cb-float-launcher {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #C47327;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 10px 30px rgba(138, 75, 20, 0.35);
+    cursor: pointer;
+    z-index: 9998;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cb-float-launcher:hover {
+    background: #8A4B14;
+    transform: scale(1.08);
+}
+
+.cb-float-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    z-index: 9999;
+    display: none;
+}
+
+.cb-float-panel.cb-float-panel--open {
+    display: block;
+    animation: cb-float-in 0.25s ease;
+}
+
+@keyframes cb-float-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+    .cb-wrapper {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    .cb-messages {
+        height: 280px;
+    }
+    .cb-float-panel {
+        right: 16px;
+        bottom: 88px;
+    }
+    .cb-float-launcher {
+        right: 16px;
+        bottom: 16px;
+    }
+}

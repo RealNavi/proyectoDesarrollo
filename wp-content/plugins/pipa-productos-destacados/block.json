@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pipa/productos-destacados",
+	"title": "Productos Destacados",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Muestra los productos existentes marcados con el estado \"Destacado\".",
+	"attributes": {
+		"cantidad": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "pipa-productos-destacados",
+	"editorScript": "pipa-productos-destacados-editor",
+	"render": "file:./render.php"
+}
